@@ -23,7 +23,7 @@ export const userSignUp = async (req, res) => {
       httpOnly: true,
       // signed: true,
       secure: true, // Ensure cookie is sent over HTTPS only
-      sameSite: "none", // Improve CSRF protection
+      sameSite: "strict", // Improve CSRF protection
     });
 
     const token = createToken(newUser.id.toString(), "7d");
@@ -38,7 +38,7 @@ export const userSignUp = async (req, res) => {
       // signed: true,
       expires,
       secure: true, // Ensure cookie is sent over HTTPS only
-      sameSite: "none", // Improve CSRF protection
+      sameSite: "strict", // Improve CSRF protection
     });
 
     return res.status(201).json({
@@ -70,7 +70,7 @@ export const userLogin = async (req, res) => {
       httpOnly: true,
       // signed: true,
       secure: true, // Ensure cookie is sent over HTTPS only
-      sameSite: "none", // Improve CSRF protection
+      sameSite: "strict", // Improve CSRF protection
     });
 
     const token = createToken(user.id.toString(), "7d");
@@ -85,7 +85,7 @@ export const userLogin = async (req, res) => {
       httpOnly: true,
       expires,
       secure: true, // Ensure cookie is sent over HTTPS only
-      sameSite: "none", // Improve CSRF protection
+      sameSite: "strict", // Improve CSRF protection
     });
 
     return res.status(200).json({
@@ -143,7 +143,7 @@ export const logout = async (req, res) => {
       httpOnly: true,
       // signed: true,
       secure: true, // Ensure cookie is sent over HTTPS only
-      sameSite: "none", // Improve CSRF protection
+      sameSite: "strict", // Improve CSRF protection
     });
 
     return res.status(200).json({ message: "OK" });
