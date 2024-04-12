@@ -11,7 +11,11 @@ config();
 const app = express();
 
 app.use(
-  cors({ origin: "https://recipeblogapp.netlify.app", credentials: true })
+  cors({
+    origin: "https://recipeblogapp.netlify.app",
+    credentials: true,
+    exposedHeaders: ["Set-Cookie"],
+  })
 );
 app.set("trust proxy", 1);
 
