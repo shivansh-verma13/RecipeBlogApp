@@ -10,17 +10,19 @@ import cookieParser from "cookie-parser";
 config();
 const app = express();
 
-app.use(cors({ origin: "https://recipeblogapp.netlify.app/", credentials: true }));
+app.use(
+  cors({ origin: "https://recipeblogapp.netlify.app/", credentials: true })
+);
 app.use(express.json());
-// app.use(cookieParser(process.env.COOKIE_SECRET));
-app.use(cookieParser(COOKIE_SECRET));
+app.use(cookieParser(process.env.COOKIE_SECRET));
+// app.use(cookieParser(COOKIE_SECRET));
 
 app.use("/auth", userRouter);
 app.use("/recipes", recipeRouter);
 
 mongoose
-  // .connect(process.env.MONGODB_URL)
-  .connect(MONGODB_URL)
+  .connect(process.env.MONGODB_URL)
+  // .connect(MONGODB_URL)
   .then(() => {})
   .catch((err) => console.log(err));
 
