@@ -18,8 +18,8 @@ export const userSignUp = async (req, res) => {
     await newUser.save();
 
     res.clearCookie("auth_token", {
-      path: "/",
-      domain: "recipeblogapp.netlify.app",
+      // path: "/",
+      // domain: "recipeblogapp.netlify.app",
       httpOnly: false,
       // signed: true,
       secure: true, // Ensure cookie is sent over HTTPS only
@@ -32,8 +32,8 @@ export const userSignUp = async (req, res) => {
     expires.setDate(expires.getDate() + 7);
 
     res.cookie("auth_token", token, {
-      path: "/",
-      domain: "recipeblogapp.netlify.app",
+      // path: "/",
+      // domain: "recipeblogapp.netlify.app",
       httpOnly: false,
       // signed: true,
       expires,
@@ -65,8 +65,8 @@ export const userLogin = async (req, res) => {
       return res.status(403).json({ message: "Password Is Incorrect" });
 
     res.clearCookie("auth_token", {
-      path: "/",
-      domain: "recipeblogapp.netlify.app",
+      // path: "/",
+      // domain: "recipeblogapp.netlify.app",
       httpOnly: false,
       // signed: true,
       secure: true, // Ensure cookie is sent over HTTPS only
@@ -79,8 +79,8 @@ export const userLogin = async (req, res) => {
     expires.setDate(expires.getDate() + 7);
 
     res.cookie("auth_token", token, {
-      path: "/",
-      domain: "recipeblogapp.netlify.app",
+      // path: "/",
+      // domain: "recipeblogapp.netlify.app",
       // signed: true,
       httpOnly: false,
       expires,
@@ -138,8 +138,8 @@ export const logout = async (req, res) => {
     }
 
     res.clearCookie("auth_token", {
-      path: "/",
-      domain: "recipeblogapp.netlify.app",
+      // path: "/",
+      // domain: "recipeblogapp.netlify.app",
       httpOnly: false,
       // signed: true,
       secure: true, // Ensure cookie is sent over HTTPS only
