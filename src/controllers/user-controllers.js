@@ -26,7 +26,7 @@ export const userSignUp = async (req, res) => {
       sameSite: "none", // Improve CSRF protection
     });
 
-    const token = await createToken(newUser.id.toString(), "7d");
+    const token = createToken(newUser.id.toString(), "7d");
 
     const expires = new Date();
     expires.setDate(expires.getDate() + 7);
@@ -73,7 +73,7 @@ export const userLogin = async (req, res) => {
       sameSite: "none", // Improve CSRF protection
     });
 
-    const token = await createToken(user.id.toString(), "7d");
+    const token = createToken(user.id.toString(), "7d");
 
     const expires = new Date();
     expires.setDate(expires.getDate() + 7);
