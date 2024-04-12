@@ -3,13 +3,11 @@ import cors from "cors";
 import mongoose from "mongoose";
 import path from "node:path";
 import { config } from "dotenv";
-import { userRouter } from "./routes/users.js";
-import { recipeRouter } from "./routes/recipes.js";
+import { userRouter } from "./src/routes/users.js";
+import { recipeRouter } from "./src/routes/recipes.js";
 import cookieParser from "cookie-parser";
 
-config({
-  path: path.join(process.cwd(), "..", ".env"),
-});
+config();
 const app = express();
 
 app.use(cors({ origin: "https://recipeblogapp.netlify.app/", credentials: true }));
