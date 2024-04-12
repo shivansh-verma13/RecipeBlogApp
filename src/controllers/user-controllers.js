@@ -20,7 +20,7 @@ export const userSignUp = async (req, res) => {
     res.clearCookie("auth_token", {
       path: "/",
       domain: "recipeblogapp.netlify.app",
-      httpOnly: true,
+      httpOnly: false,
       // signed: true,
       secure: true, // Ensure cookie is sent over HTTPS only
       sameSite: "none", // Improve CSRF protection
@@ -34,7 +34,7 @@ export const userSignUp = async (req, res) => {
     res.cookie("auth_token", token, {
       path: "/",
       domain: "recipeblogapp.netlify.app",
-      httpOnly: true,
+      httpOnly: false,
       // signed: true,
       expires,
       secure: true, // Ensure cookie is sent over HTTPS only
@@ -67,7 +67,7 @@ export const userLogin = async (req, res) => {
     res.clearCookie("auth_token", {
       path: "/",
       domain: "recipeblogapp.netlify.app",
-      httpOnly: true,
+      httpOnly: false,
       // signed: true,
       secure: true, // Ensure cookie is sent over HTTPS only
       sameSite: "none", // Improve CSRF protection
@@ -82,7 +82,7 @@ export const userLogin = async (req, res) => {
       path: "/",
       domain: "recipeblogapp.netlify.app",
       // signed: true,
-      httpOnly: true,
+      httpOnly: false,
       expires,
       secure: true, // Ensure cookie is sent over HTTPS only
       sameSite: "none", // Improve CSRF protection
@@ -140,7 +140,7 @@ export const logout = async (req, res) => {
     res.clearCookie("auth_token", {
       path: "/",
       domain: "recipeblogapp.netlify.app",
-      httpOnly: true,
+      httpOnly: false,
       // signed: true,
       secure: true, // Ensure cookie is sent over HTTPS only
       sameSite: "none", // Improve CSRF protection
