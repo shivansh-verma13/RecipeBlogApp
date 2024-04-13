@@ -18,10 +18,10 @@ export const userSignUp = async (req, res) => {
     await newUser.save();
 
     res.clearCookie("auth_token", {
-      // path: "/",
-      // domain: "recipeblogapp.netlify.app",
-      // httpOnly: false,
-      // // signed: true,
+      path: "/",
+      domain: "recipe-blog-front-end-delta.vercel.app",
+      httpOnly: false,
+      signed: true,
       secure: true, // Ensure cookie is sent over HTTPS only
       sameSite: "none", // Improve CSRF protection
     });
@@ -32,11 +32,11 @@ export const userSignUp = async (req, res) => {
     expires.setDate(expires.getDate() + 7);
 
     res.cookie("auth_token", token, {
-      // path: "/",
-      // domain: "recipeblogapp.netlify.app",
-      // httpOnly: false,
-      // // signed: true,
-      // expires,
+      path: "/",
+      domain: "recipe-blog-front-end-delta.vercel.app",
+      httpOnly: false,
+      signed: true,
+      expires,
       secure: true, // Ensure cookie is sent over HTTPS only
       sameSite: "none", // Improve CSRF protection
     });
@@ -65,10 +65,10 @@ export const userLogin = async (req, res) => {
       return res.status(403).json({ message: "Password Is Incorrect" });
 
     res.clearCookie("auth_token", {
-      // path: "/",
-      // domain: "recipeblogapp.netlify.app",
-      // httpOnly: false,
-      // // signed: true,
+      path: "/",
+      domain: "recipe-blog-front-end-delta.vercel.app",
+      httpOnly: false,
+      signed: true,
       secure: true, // Ensure cookie is sent over HTTPS only
       sameSite: "none", // Improve CSRF protection
     });
@@ -79,11 +79,11 @@ export const userLogin = async (req, res) => {
     expires.setDate(expires.getDate() + 7);
 
     res.cookie("auth_token", token, {
-      // // path: "/",
-      // // domain: "recipeblogapp.netlify.app",
-      // // signed: true,
-      // httpOnly: false,
-      // expires,
+      path: "/",
+      domain: "recipe-blog-front-end-delta.vercel.app",
+      signed: true,
+      httpOnly: false,
+      expires,
       secure: true, // Ensure cookie is sent over HTTPS only
       sameSite: "none", // Improve CSRF protection
     });
@@ -138,10 +138,10 @@ export const logout = async (req, res) => {
     }
 
     res.clearCookie("auth_token", {
-      // // path: "/",
-      // // domain: "recipeblogapp.netlify.app",
-      // httpOnly: false,
-      // // signed: true,
+      path: "/",
+      domain: "recipe-blog-front-end-delta.vercel.app",
+      httpOnly: false,
+      signed: true,
       secure: true, // Ensure cookie is sent over HTTPS only
       sameSite: "none", // Improve CSRF protection
     });
