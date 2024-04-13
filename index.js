@@ -12,9 +12,9 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://recipeblogapp.netlify.app",
+    origin: "https://recipe-blog-front-end-delta.vercel.app",
     credentials: true,
-    exposedHeaders: ["Set-Cookie"],
+    // exposedHeaders: ["Set-Cookie"],
   })
 );
 app.set("trust proxy", 1);
