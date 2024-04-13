@@ -20,10 +20,10 @@ export const userSignUp = async (req, res) => {
     res.clearCookie("auth_token", {
       // path: "/",
       // domain: "recipeblogapp.netlify.app",
-      httpOnly: false,
-      // signed: true,
-      secure: true, // Ensure cookie is sent over HTTPS only
-      sameSite: "none", // Improve CSRF protection
+      // httpOnly: false,
+      // // signed: true,
+      // secure: true, // Ensure cookie is sent over HTTPS only
+      // sameSite: "none", // Improve CSRF protection
     });
 
     const token = createToken(newUser.id.toString(), "7d");
@@ -34,11 +34,11 @@ export const userSignUp = async (req, res) => {
     res.cookie("auth_token", token, {
       // path: "/",
       // domain: "recipeblogapp.netlify.app",
-      httpOnly: false,
-      // signed: true,
-      expires,
-      secure: true, // Ensure cookie is sent over HTTPS only
-      sameSite: "none", // Improve CSRF protection
+      // httpOnly: false,
+      // // signed: true,
+      // expires,
+      // secure: true, // Ensure cookie is sent over HTTPS only
+      // sameSite: "none", // Improve CSRF protection
     });
 
     return res.status(201).json({
@@ -67,10 +67,10 @@ export const userLogin = async (req, res) => {
     res.clearCookie("auth_token", {
       // path: "/",
       // domain: "recipeblogapp.netlify.app",
-      httpOnly: false,
-      // signed: true,
-      secure: true, // Ensure cookie is sent over HTTPS only
-      sameSite: "none", // Improve CSRF protection
+      // httpOnly: false,
+      // // signed: true,
+      // secure: true, // Ensure cookie is sent over HTTPS only
+      // sameSite: "none", // Improve CSRF protection
     });
 
     const token = createToken(user.id.toString(), "7d");
@@ -79,13 +79,13 @@ export const userLogin = async (req, res) => {
     expires.setDate(expires.getDate() + 7);
 
     res.cookie("auth_token", token, {
-      // path: "/",
-      // domain: "recipeblogapp.netlify.app",
-      // signed: true,
-      httpOnly: false,
-      expires,
-      secure: true, // Ensure cookie is sent over HTTPS only
-      sameSite: "none", // Improve CSRF protection
+      // // path: "/",
+      // // domain: "recipeblogapp.netlify.app",
+      // // signed: true,
+      // httpOnly: false,
+      // expires,
+      // secure: true, // Ensure cookie is sent over HTTPS only
+      // sameSite: "none", // Improve CSRF protection
     });
 
     return res.status(200).json({
@@ -138,12 +138,12 @@ export const logout = async (req, res) => {
     }
 
     res.clearCookie("auth_token", {
-      // path: "/",
-      // domain: "recipeblogapp.netlify.app",
-      httpOnly: false,
-      // signed: true,
-      secure: true, // Ensure cookie is sent over HTTPS only
-      sameSite: "none", // Improve CSRF protection
+      // // path: "/",
+      // // domain: "recipeblogapp.netlify.app",
+      // httpOnly: false,
+      // // signed: true,
+      // secure: true, // Ensure cookie is sent over HTTPS only
+      // sameSite: "none", // Improve CSRF protection
     });
 
     return res.status(200).json({ message: "OK" });
