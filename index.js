@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://recipe-blog-front-end-delta.vercel.app",
+    origin: "http://localhost:5173",
     credentials: true,
     // exposedHeaders: ["Set-Cookie"],
   })
